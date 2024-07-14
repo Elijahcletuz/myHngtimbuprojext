@@ -66,10 +66,10 @@
 import axios from 'axios';
 
 // Directly use the values instead of environment variables
-const API_BASE_URL = 'https://app.timbu.cloud';
-const ORGANIZATION_ID = '694a2073bb95454588c3757b7537c1fc';
-const APP_ID = 'UB2DA63ZDK78EYX';
-const API_KEY = '523f43fcb9f74960b0db86dd9c28f0f720240713013520547240';
+const API_BASE_URL = import.meta.env.VITE_BASE_URL;
+const ORGANIZATION_ID = import.meta.env.VITE_ORGANIZATION_ID;
+const APP_ID = import.meta.env.VITE_APP_ID;
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
