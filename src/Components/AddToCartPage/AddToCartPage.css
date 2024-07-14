@@ -1,0 +1,837 @@
+.general_container{
+
+    background-color: #CBCBCB;
+}
+
+.general_container h2 {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 500;
+}
+.bridal_heading, .limited_heading {
+    font-weight: 700;
+    font-size: 36px;
+    color: #333333;
+    padding:  0px 38px;
+}
+
+
+
+
+
+
+img{
+    border-radius: 8px;
+  }
+  
+
+footer{
+    padding: unset;
+}
+
+.general_container p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.general_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.headband {
+    padding-bottom: 35px;
+    display: flex;
+    width: 100%;
+    gap: 14px;
+    padding: 0px 38px 35px;
+}
+
+.beads_image_container {
+    width: 100%;
+}
+
+.beads_image_container img {
+    width: 100%;
+    height: 330px;
+}
+
+.limiteds{
+    width: 100%;
+}
+
+.limitimage {
+    width: 100%;
+}
+
+
+
+
+.limitimage img {
+    width: 100%;
+    height: 376px;
+}
+
+.line {
+    height: 1.5px;
+    width: 94%;
+    background-color: #7c7c7c;
+    margin: 1.5% 3%;
+}
+
+.headband2 img{
+    height: 379px;
+    width: 380px;
+}
+
+.all_band{
+    display: flex;
+    padding:  0px 38px;
+}
+
+.group1 {
+    display: flex;
+    gap: 24px;
+    padding: 0px 38px 35px;
+}
+
+.limited_heading {
+    width: 100%;
+    padding: 10px 0px 10px;
+    text-align: center;
+}
+
+
+
+.bridal_heading {
+    padding: 50px 37px 1px;
+}
+
+
+.phone_cart{
+    display: none;
+}
+
+footer h1 {
+    padding: 59px 20px 19px;
+    width: 100%;
+    text-align: center;
+    font-size: 64px;
+    font-family: "Puppies Play", cursive;
+    font-weight: 400;
+    background: #4E4E4E;
+    color: white;
+  }
+  
+  .line3{
+    height: 1px;
+    width: 100%;
+  }
+  
+  footer h6 {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 59px 10px 14px;
+    background: #4E4E4E;
+    color: white;
+}
+
+
+  
+
+
+@media screen and (min-width:100px) and (max-width:518px){
+    
+  .line3 {
+        height: 0.5px;
+        width: 100%;
+    }
+    .phone_cart {
+        display: flex;
+        align-items: center;
+        width: 87%;
+        justify-content: space-between;
+    }
+
+    .beads_image_container {
+        width: 97%;
+        padding-bottom: 20px;
+    }
+
+    .beads_image_container img {
+        width: 100%;
+        border-radius: 8px;
+        height: 300px;
+    }
+    nav h1 {
+        font-size: 36px;
+        font-family: "Puppies Play", cursive;
+        font-weight: 400;
+    }
+    .headband {
+        display: flex;
+        width: 100%;
+        gap: 30px;
+        padding: 2px 0px 1px 10px ;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .bridal_heading, .limited_heading {
+        font-weight: 700;
+        font-size: 28px;
+        color: #333333;
+    }
+    .line {
+        height: 1px;
+        width: 100%;
+        background-color: #7c7c7c;
+        padding: 0px 0px 1.7px;
+        margin: 2px 0px 18px;
+    }
+
+
+    .bridal_heading {
+        font-size: 20px;
+        padding: 30px 4px 0;
+    }
+
+
+    .general_container p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .general_container h2 {
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 500;
+    }
+
+    .add_cart_icon h6 {
+        font-size: 9px;
+        font-weight: 400;
+    }
+
+    .add_cart_icon img {
+        height: 16px;
+        margin-right: 4px;
+        width: 15px;
+        margin-left: 4.5px;
+    }
+
+    footer h6 {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        padding: 30px 10px 14px;
+        background: #4E4E4E;
+        color: white;
+    }
+
+    nav {
+        position: sticky;
+        top: 0px;
+        /* width: 100%; */
+        padding: 16px 15px;
+        justify-content: space-between;
+    }
+
+    .icons {
+        display: flex;
+        gap: 9px;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 24px;
+        padding-bottom: 35px;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 38px;
+    }
+
+ 
+    .general_container {
+        padding: unset;
+        margin: unset;
+        background-color: #cbcbcb;
+    }
+
+    .limitimage {
+        width: 115%;
+    }
+
+
+    footer h1 {
+        padding: 60px 20px 11px;
+        width: 100%;
+        text-align: center;
+        font-size: 36px;
+        font-family: "Puppies Play", cursive;
+        font-weight: 400;
+        background: #4E4E4E;
+        color: white;
+    }
+
+    .phone_cart {
+        width: 99%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .phone_none{
+        display: none;
+    }
+
+
+      
+}
+
+@media screen and (min-width: 701px) and (max-width: 799px){
+    .headband {
+        padding-bottom: 35px;
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        padding: 0px;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 8px;
+        padding: 0px;
+    }
+
+    
+    
+    
+
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1000px){
+    .beads_image_container img {
+        width: 100%;
+        height: 257px;
+        border-radius: 8px;
+    }
+
+    footer h1 {
+        padding: 26px 20px 11px;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .general_container h2 {
+        font-size: 14px;
+        line-height: 25px;
+        font-weight: 500;
+    }
+
+    .general_container p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    footer h6 {
+        width: 100%;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 19px 10px 14px;
+        background: #4E4E4E;
+        color: white;
+    }
+
+    .limitimage img {
+        width: 100%;
+        height: 281px;
+        border-radius: 8px;
+    }
+
+    .bridal_heading, .limited_heading {
+        font-weight: 700;
+        font-size: 27px;
+        color: #333333;
+    }
+    
+    
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px){
+    .limiteds{
+        display: flex;
+    }
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 899px){
+    .beads_image_container img {
+        width: 100%;
+        height: 202px;
+        border-radius: 8px;
+    }
+
+    footer h1 {
+        padding: 19px 20px 13px;
+        width: 100%;
+        font-size: 40px;
+    }
+
+    .bridal_heading, .limited_heading {
+        font-weight: 700;
+        font-size: 25px;
+        color: #333333;
+    }
+
+    .headband {
+        padding-bottom: 35px;
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        padding: 0px 20px 17px;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 10px;
+        padding: 0px 20px 20px;
+    }
+
+    .general_container h2 {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 500;
+    }
+
+    .general_container p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .add_cart_icon {
+        scale: 0.9;
+        margin: unset;
+    }
+
+    .limitimage img {
+        width: 100%;
+        height: 226px;
+        border-radius: 8px;
+    }
+
+    footer h6 {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 15px 10px 14px;
+        background: #4E4E4E;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 701px) and (max-width: 799px){
+    nav {
+        display: flex;
+        padding: 9px 15px 4px;
+        align-items: center;
+       
+        justify-content: space-between;
+    }
+
+    nav h1 {
+        font-size: 40px;
+        font-family: "Puppies Play", cursive;
+        font-weight: 400;
+    }
+
+    .icons img {
+        height: 28px;
+    }
+
+    .general_container {
+        padding: 0px 15px 20px;
+        background-color: #CBCBCB;
+    }
+
+    .beads_image_container img {
+        width: 100%;
+        height: 190px;
+        border-radius: 8px;
+    }
+
+    .general_container p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 13px;
+    }
+
+    .general_container h2 {
+        font-size: 12px;
+        line-height: 25px;
+        font-weight: 500;
+    }
+
+    .add_cart_icon {
+        scale: 0.8;
+        margin: 5px -7px;
+    }
+
+    .bridal_heading, .limited_heading {
+        font-weight: 700;
+        font-size: 20px;
+        padding: 30px 20px 10px;
+        color: #333333;
+    }
+
+.line {
+    height: 1.5px;
+    width: 100%;
+    background-color: #7c7c7c;
+    margin: 3px 0px 10px;
+}
+
+.limitimage img {
+    width: 100%;
+    border-radius: 8px;
+    height: 230px;
+}
+
+footer h1 {
+    padding: 20px 20px 7px;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+footer h6 {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 16px 10px 7px;
+    background: #4E4E4E;
+    color: white;
+}
+
+}
+
+@media screen and (min-width: 519px)  and (max-width: 700px){
+
+    nav {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+        margin: unset;
+        /* padding: 0px 25px; */
+        justify-content: space-between;
+    }
+    
+
+
+    .limitimage {
+        width: 258px;
+    }
+
+
+    .limiteds {
+        display: flex;
+        width: 100%;
+        gap: 17px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+
+   
+    nav {
+        display: flex;
+        padding: 9px 15px 4px;
+        align-items: center;
+       
+        justify-content: space-between;
+    }
+
+    nav h1 {
+        font-size: 40px;
+        font-family: "Puppies Play", cursive;
+        font-weight: 400;
+    }
+
+    .icons img {
+        height: 28px;
+    }
+
+    .general_container {
+        padding: 0px 15px;
+        background-color: #CBCBCB;
+    }
+
+    .beads_image_container {
+        width: 45%;
+    }
+    .beads_image_container img {
+        width: 100%;
+        height: 280px;
+        border-radius: 8px;
+    }
+
+    .headband {
+        padding-bottom: unset;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        margin: unset;
+        padding: unset;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    
+
+    .general_container p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 13px;
+        text-align: start;
+    }
+
+    .general_container h2 {
+        font-size: 12px;
+        text-align: start;
+        line-height: 25px;
+        font-weight: 500;
+    }
+
+    .add_cart_icon {
+        scale: 0.8;
+        margin: 5px -7px;
+        text-align: start;
+    }
+
+   
+
+    .bridal_heading, .limited_heading {
+        font-weight: 700;
+        font-size: 20px;
+        color: #333333;
+        padding-left: 26px;
+    }
+
+    .line {
+        height: 1.5px;
+        width: 94%;
+        background-color: #7c7c7c;
+        margin: 3px 4px 12px 18px;
+    }
+
+    .limitimage img {
+        width: 100%;
+        border-radius: 8px;
+        height: 230px;
+    }
+
+footer h1 {
+    padding: 20px 20px 7px;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+
+footer h6 {
+    width: 100%;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 16px 10px 7px;
+    background: #4E4E4E;
+    color: white;
+}
+
+.group1 {
+    display: flex;
+    gap: 0px;
+    padding: 0px 0px 0px 0px;
+    flex-direction: column;
+}
+
+.phone_cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.phone_none{
+    display: none;
+}
+ 
+}
+
+
+@media screen and (min-width: 519px) and (max-width: 589px){
+
+    .limitimage {
+        width: 229px;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 0px;
+        padding-bottom: 35px;
+        flex-direction: column;
+    }
+
+}
+
+/* @media screen and (min-width:100px) and (max-width:518px){
+    .desktopbead{
+        display: none !important;
+    }
+      
+    
+      .phonebeads{
+        display: block !important;
+      }
+
+} */
+
+
+  
+
+  /* .phonebeads{
+    display: none;
+  } */
+
+  @media screen and (min-width:100px) and (max-width:330px){
+
+
+  .beads_image_container {
+    width: 268px;
+}
+
+.limitimage {
+    width: 268px;
+}  
+
+.limitimage img {
+    width: 100%;
+    height: 253px;
+}
+
+.bridal_heading, .limited_heading {
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+}
+
+.line {
+    height: 0.5px;
+    width: 100%;
+    background-color: #7c7c7c;
+    padding: 0px 0px 1.7px;
+    margin: 2px 0px 18px;
+}
+
+
+}
+
+@media screen and (min-width:1700px) {
+    .limitimage img {
+        width: 100%;
+        height: 479px;
+    }
+
+    .general_container p {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 34px;
+    }
+
+    .add_cart_icon {
+        width: 156px;
+        border-radius: 20px;
+        gap: 10px;
+        display: flex;
+        border: 1px solid black;
+        align-items: center;
+        padding: 6px;
+        margin: 5px 0px;
+    }
+
+    .add_cart_icon h6 {
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .general_container h2 {
+        font-size: 22px;
+        line-height: 40px;
+        font-weight: 500;
+    }
+    
+}
+
+
+
+.group_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.items-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Space between each row */
+}
+
+.headband .beads_image_container, .limiteds .limitimage {
+    flex: 1 1 calc(25% - 10px); /* 4 items per row, subtracting a bit for spacing */
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination-controls button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.pagination-controls .active {
+    font-weight: bold;
+    background-color: #ddd; /* Example active style */
+}
+
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    font-size: 1.5rem; 
+    color: #333; 
+    background-color: #cbcbcb; 
+}
+
+
+
+
