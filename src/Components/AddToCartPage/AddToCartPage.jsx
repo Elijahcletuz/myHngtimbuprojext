@@ -36,7 +36,13 @@ export function AddToCartPage({ cart, setCart }) {
   };
 
   if (!products || products.length === 0) {
-    return <div className='loading'>Loading...</div>;
+    return (
+      <div className='loading'>
+        <div className="loader"></div>
+        Loading...
+      </div>
+    );
+    
   }
 
   return (

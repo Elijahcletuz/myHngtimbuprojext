@@ -57,7 +57,12 @@ const Singleproduct = ({ cart, setCart }) => {
   };
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+        <div className='loading'>
+          <div className="loader"></div>
+          Loading...
+        </div>
+      );
   }
 
   const imageSource = product.photos && product.photos.length > 0
