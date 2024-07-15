@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -18,11 +16,9 @@ export function AddToCartPage({ cart, setCart }) {
     const APP_ID = import.meta.env.VITE_APP_ID;
     const API_KEY = import.meta.env.VITE_API_KEY;
 
-
-
     axios.get(`${API_BASE_URL}/products?organization_id=${ORGANIZATION_ID}&Appid=${APP_ID}&Apikey=${API_KEY}`)
       .then(response => {
-        const sortedProducts = response.data.items.sort((a, b) => a.id - b.id); // Sort by smallest to biggest ID
+        const sortedProducts = response.data.items.sort((a, b) => a.id - b.id);
         setProducts(sortedProducts);
       })
       .catch(error => {
@@ -30,7 +26,6 @@ export function AddToCartPage({ cart, setCart }) {
       });
   }, []);
 
-  // First 24 products for "Bridal Headgears"
   const bridalHeadgearProducts = products.slice(0, 24);
   const limitedEditionProducts = products.slice(24, 30);
 
@@ -49,9 +44,8 @@ export function AddToCartPage({ cart, setCart }) {
       <div className="general_container">
         <div className='bridal_heading'>Bridal Headgears</div>
         <div className='linecontainer'>
-        <div className="line"></div>
+          <div className="line"></div>
         </div>
-
         <div className="group_container headband desktopbead">
           <div className="items-group item1">
             {paginatedProducts.slice(0, 4).map((product, index) => (
@@ -68,7 +62,6 @@ export function AddToCartPage({ cart, setCart }) {
             ))}
           </div>
         </div>
-
         <div className="pagination-controls">
           {[1, 2, 3].map((page) => (
             <button
@@ -80,7 +73,6 @@ export function AddToCartPage({ cart, setCart }) {
             </button>
           ))}
         </div>
-
         <div className="limited_heading">Limited Editions</div>
         <div className='limiteds'>
           <div className="group1">

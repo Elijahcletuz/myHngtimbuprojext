@@ -393,3 +393,49 @@ form{
     }
 
 }
+
+/* Checkout.css */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 40px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .nothing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+  }
+  
+  .redirecting {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+  }
+  
+
+  @media screen and (max-width: 900px) {
+    .success-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333333;
+        color: white;
+        padding: 40px 20px;
+        border-radius: 5px;
+        z-index: 1000;
+        width: 80%;
+      }
+    
+  }

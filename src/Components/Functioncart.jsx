@@ -2,16 +2,18 @@
 
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import addcart from '../assets/basket.svg';
 
 export function Functioncart({ product, cart, setCart }) {
   const [buttonText, setButtonText] = useState('Add to Cart');
 
-  const handleClick = () => {
-    const existingItem = cart.find(item => item.unique_id === product.unique_id);
+  const handleClick = (e) => {
+    e.preventDefault(); // Prevent navigation to single product page on add to cart
+    const existingItem = cart.find(item => item.id === product.id);
     if (existingItem) {
       const updatedCart = cart.map(item =>
-        item.unique_id === product.unique_id ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
       setCart(updatedCart);
     } else {
@@ -32,11 +34,15 @@ export function Functioncart({ product, cart, setCart }) {
   const productPrice = product.current_price?.[0]?.NGN?.[0] || '0';
 
   return (
-    <div>
-      <img src={imageSource} alt={productName} onError={(e) => { e.target.src = 'default-image.jpg'; }} />
-      <h2 className='phone_none'>{productName}</h2>
+    <div className="product-container">
+      <Link to={`/single/${product.id}`} className="product-link">
+        <img src={imageSource} alt={productName} onError={(e) => { e.target.src = 'default-image.jpg'; }} />
+        <h2 className='phone_none'>{productName}</h2>
+      </Link>
       <div className='phone_cart'>
-        <h2>{productName}</h2>
+        <Link to={`/single/${product.id}`} className="product-link">
+          <h2>{productName}</h2>
+        </Link>
         <button onClick={handleClick} className="add-to-cart-button">
           <div className="add-text add_cart_icon">
             <img src={addcart} alt="" />
@@ -64,4 +70,3 @@ Functioncart.propTypes = {
 };
 
 export default Functioncart;
-

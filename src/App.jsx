@@ -1,9 +1,12 @@
+
+
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './Components/Navbar/Navbar';
 import { Cart } from './Components/Cart/Cart';
 import { AddToCartPage } from './Components/AddToCartPage/AddToCartPage';
 import { useState } from 'react';
 import Checkout from './Components/Checkout/Checkout.jsx';
+import Singleproduct from './Components/Singleproduct/Singleproduct'; // Ensure the path is correct
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -14,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/checkout' element={<Checkout cart={cart} setCart={setCart} />} />
         <Route path='/Cart' element={<Cart cart={cart} setCart={setCart} />} />
+        <Route path='/single/:id' element={<Singleproduct cart={cart} setCart={setCart} />} />
         <Route path='/' element={<AddToCartPage cart={cart} setCart={setCart} />} />
       </Routes>
     </Router>
@@ -21,3 +25,4 @@ function App() {
 }
 
 export default App;
+
