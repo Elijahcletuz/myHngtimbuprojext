@@ -44,6 +44,7 @@ export function AddToCartPage({ cart, setCart }) {
     );
     
   }
+  
 
   return (
     <div>
