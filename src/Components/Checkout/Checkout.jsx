@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+
+
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import './Checkout.css';
+import './Checkout.css'; // Ensure to adjust CSS file name as per your project
 import visa from '../../assets/Visa.svg';
 import mastercard from '../../assets/mastercard.svg';
 import paypal from '../../assets/paypal.svg';
@@ -15,6 +17,16 @@ const Checkout = ({ cart: initialCart, setCart }) => {
   const [cartLocal, setCartLocal] = useState(initialCart);
   const [subtotal, setSubtotal] = useState(0);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+  const [selectedMethod, setSelectedMethod] = useState('');
+  const [name, setName] = useState('');
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiry, setExpiry] = useState('');
+  const [cvv, setCvv] = useState('');
+  const [paymentMethodError, setPaymentMethodError] = useState('');
+  const [nameError, setNameError] = useState('');
+  const [cardNumberError, setCardNumberError] = useState('');
+  const [expiryError, setExpiryError] = useState('');
+  const [cvvError, setCvvError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,17 +58,72 @@ const Checkout = ({ cart: initialCart, setCart }) => {
     setCart(updatedCart); // Update global cart
   };
 
-  const handleCheckout = () => {
-    setShowSuccessMessage(true);
+  const handlePaymentMethodChange = (event) => {
+    setSelectedMethod(event.target.id);
+    setPaymentMethodError('');
+  };
 
-    // Clear the cart
-    setCart([]);
-    setCartLocal([]);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+    setNameError('');
+  };
 
-    // Redirect to AddToCartPage after 2 seconds
-    setTimeout(() => {
-      navigate('/');
-    }, 2000);
+  const handleCardNumberChange = (event) => {
+    setCardNumber(event.target.value);
+    setCardNumberError('');
+  };
+
+  const handleExpiryChange = (event) => {
+    setExpiry(event.target.value);
+    setExpiryError('');
+  };
+
+  const handleCvvChange = (event) => {
+    setCvv(event.target.value);
+    setCvvError('');
+  };
+
+  const handleCheckout = (event) => {
+    event.preventDefault();
+
+    // Validate payment method
+    if (!selectedMethod) {
+      setPaymentMethodError('Choose a payment method');
+    }
+
+    // Validate cardholder's name
+    if (!name.trim()) {
+      setNameError('Enter your name');
+    }
+
+    // Validate card number
+    if (cardNumber.length < 8) {
+      setCardNumberError('Enter a valid card number');
+    }
+
+    // Validate expiry date
+    if (!/^\d{2}\/\d{4}$/.test(expiry)) {
+      setExpiryError('Enter a valid expiry date (MM/YYYY)');
+    }
+
+    // Validate CVV
+    if (!/^\d{3}$/.test(cvv)) {
+      setCvvError('Enter a valid CVV');
+    }
+
+    // If all validations pass, proceed with checkout
+    if (selectedMethod && name.trim() && cardNumber.length >= 8 && /^\d{2}\/\d{4}$/.test(expiry) && /^\d{3}$/.test(cvv)) {
+      setShowSuccessMessage(true);
+
+      // Clear the cart
+      setCart([]);
+      setCartLocal([]);
+
+      // Redirect to AddToCartPage after 2 seconds
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+    }
   };
 
   return (
@@ -72,7 +139,7 @@ const Checkout = ({ cart: initialCart, setCart }) => {
         <div className='paycontainer'>
           <Link to='/Cart'>
             <div className='backbutton'>
-              <img src={backbutton} alt="" />
+              <img src={backbutton} alt="Back" />
             </div>
           </Link>
           <div className="flex_pay">
@@ -129,38 +196,43 @@ const Checkout = ({ cart: initialCart, setCart }) => {
               <h3>Payment method</h3>
               <div className='methods'>
                 <div className='bank bank1'>
-                  <img src={visa} alt="" />
+                  <img src={visa} alt="Visa" />
                   <label htmlFor="visa"></label>
-                  <input type="radio" name="payment-method" id="visa" />
+                  <input type="radio" name="payment-method" id="visa" onChange={handlePaymentMethodChange} />
                 </div>
                 <div className='bank'>
-                  <img src={mastercard} alt="" />
+                  <img src={mastercard} alt="Mastercard" />
                   <label htmlFor="mastercard"></label>
-                  <input type="radio" name="payment-method" id="mastercard" />
+                  <input type="radio" name="payment-method" id="mastercard" onChange={handlePaymentMethodChange} />
                 </div>
                 <div className='bank'>
-                  <img src={paypal} alt="" />
+                  <img src={paypal} alt="PayPal" />
                   <label htmlFor="paypal"></label>
-                  <input type="radio" name="payment-method" id="paypal" />
+                  <input type="radio" name="payment-method" id="paypal" onChange={handlePaymentMethodChange} />
                 </div>
               </div>
-              <form action="">
+              <span className='payment_method error'>{paymentMethodError}</span>
+              <form>
                 <div className="form_item">
                   <label htmlFor="name">Cardholder’s name</label>
-                  <input type="text" id="name" placeholder='Blue Oma'/>
+                  <input type="text" id="name" value={name} onChange={handleNameChange} placeholder='Blue Oma'/>
+                  <span className='name_method error'>{nameError}</span>
                 </div>
                 <div className="form_item">
                   <label htmlFor="cardNumber">Card number</label>
-                  <input type="text" id="cardNumber" placeholder='1111 2222 3333 4444' />
+                  <input type="text" id="cardNumber" value={cardNumber} onChange={handleCardNumberChange} placeholder='1111 2222 3333 4444' />
+                  <span className='card_method error'>{cardNumberError}</span>
                 </div>
                 <div className="flexboth">
                   <div className="form_item1 expiry">
                     <label htmlFor="expiry">Expiry date</label>
-                    <input type="text" id="expiry" placeholder='23/2027'/>
+                    <input type="text" id="expiry" value={expiry} onChange={handleExpiryChange} placeholder='23/2027'/>
+                    <span className='expiry_method error'>{expiryError}</span>
                   </div>
                   <div className="form_item1 cvv">
                     <label htmlFor="cvv">CVV</label>
-                    <input type="text" id="cvv" placeholder='123' />
+                    <input type="text" id="cvv" value={cvv} onChange={handleCvvChange} placeholder='123' />
+                    <span className='cvv_method error'>{cvvError}</span>
                   </div>
                 </div>
                 <div className="line4"></div>
@@ -177,7 +249,7 @@ const Checkout = ({ cart: initialCart, setCart }) => {
                   <p>₦{totalWithDelivery.toLocaleString()}</p>
                 </div>
                 <div className="later">
-                  <img src={check} alt="" />
+                  <img src={check} alt="Save for future payments" />
                   <p>Save details for future payments</p>
                 </div>
               </form>
@@ -190,7 +262,7 @@ const Checkout = ({ cart: initialCart, setCart }) => {
       )}
     </div>
   );
-}
+};
 
 // Define prop types for Checkout
 Checkout.propTypes = {
